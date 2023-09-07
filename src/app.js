@@ -1,18 +1,20 @@
 import express from "express";
+import cors from "cors";
 import "dotenv/config";
 import { productsDB } from "./models/products.js";
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/products", (req, res) => {
-    res.json(productsDB);
+  res.json(productsDB);
 });
 
 app.use((req, res) => {
-    res.status(404).json({error: "Not found"});
-})
+  res.status(404).json({ error: "Not found" });
+});
 
 const port = process.env.PORT ?? 3000;
 
