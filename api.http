@@ -1,0 +1,29 @@
+### Obtener todos los productos
+GET http://localhost/api/v1/products
+
+### Obtener un producto por id
+GET http://localhost/api/v1/products/:id
+
+### Crear un producto
+POST http://localhost/api/v1/products
+Content-Type: application/json
+
+{
+    "name": "Medias",
+    "price": 5,
+    "description": "Descripción del producto 1",
+    "imagen": "https://picsum.photos/200/300",
+    "stock": 30,
+}
+
+### Actualizar un producto
+PATCH http://localhost/api/v1/products/:id
+Content-Type: application/json
+
+{
+    "name": "Camiseta",
+    "stock": 10,
+}
+
+### Eliminar un producto
+DELETE http://localhost/api/v1/products/:id
